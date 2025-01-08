@@ -1,7 +1,6 @@
 cmake_minimum_required(VERSION 3.24)
 
 ### SETUP
-
 project(CppBuildPack
     VERSION 1.0
     HOMEPAGE_URL "https://github.com/xyz"
@@ -14,22 +13,17 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 ## TARGETS
-
-add_executable(${CMAKE_PROJECT_NAME}
-    src/main.cpp
-)
+add_executable(${CMAKE_PROJECT_NAME})
+add_subdirectory(src/)
 
 ### TEST
 if(CMAKE_BUILD_TYPE STREQUAL "Debug")
     set(ENABLE_TESTING ON)
     enable_testing()
-    include(CTest)
-
-    #TODO
+    add_subdirectory(test/)
 endif()
 
 ### INSTALL
-
 include(GNUInstallDirs)
 include(InstallRequiredSystemLibraries)
 
