@@ -18,7 +18,6 @@ add_subdirectory(src/)
 
 ### TEST
 if(CMAKE_BUILD_TYPE STREQUAL "Debug")
-    set(ENABLE_TESTING ON)
     enable_testing()
     add_subdirectory(test/)
 endif()
